@@ -19,7 +19,7 @@
     en: {
       statusChip: "July 19, 2026 · Taipei · event concluded",
       metaDate: "Date", metaTime: "Time", metaVenue: "Venue", metaFormat: "Format",
-      format: "Invitation / review-based, ticketed",
+      format: "Ticketed — single NT$500 tier via Accupass",
       navOverview: "Overview", navEvent: "The event", navSpeakers: "Speakers",
       navNotes: "My notes", navContext: "Context", navFactcheck: "Fact-check",
       secEvent: "The event, verified", secEventSub: "What can actually be confirmed about this summit — and what only the organizer says.",
@@ -41,7 +41,7 @@
     zh: {
       statusChip: "2026 年 7 月 19 日・台北・活動已結束",
       metaDate: "日期", metaTime: "時間", metaVenue: "地點", metaFormat: "形式",
-      format: "邀請與審核制・收費活動",
+      format: "收費活動・Accupass 單一票種 NT$500",
       navOverview: "總覽", navEvent: "活動", navSpeakers: "講者",
       navNotes: "聽講心得", navContext: "背景脈絡", navFactcheck: "事實查核",
       secEvent: "活動資訊（已查證）", secEventSub: "這場峰會有哪些事實可以被證實——哪些只有主辦方單方面的說法。",

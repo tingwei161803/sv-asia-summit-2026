@@ -66,11 +66,27 @@ window.SITE_EVENT = {
       icon: "apartment",
       label: { en: "Organizer", zh: "主辦單位" },
       value: {
-        en: "Legally: SV Asia Leaders Consulting Co., Ltd. (est. 2026-06-15, capital NT$500k). “SV Asia Venture Hub” is a Facebook group + email domain, not a registered org with a website",
-        zh: "法定主辦為「矽谷亞洲領袖顧問企業有限公司」（2026-06-15 核准設立，資本額 50 萬，統編 62064078）；「SV Asia Venture Hub」僅為 FB 社團名稱與信箱域名，無官方網站"
+        en: "Legally: SV Asia Leaders Consulting Co., Ltd. (est. 2026-06-15, capital NT$500k, sole director Jo-Ling Chen). “SV Asia Venture Hub” is a Facebook group + email domain, not a registered org with a website",
+        zh: "法定主辦為「矽谷亞洲領袖顧問企業有限公司」（2026-06-15 核准設立，資本額 50 萬，統編 62064078，唯一董事陳若羚）；「SV Asia Venture Hub」僅為 FB 社團名稱與信箱域名，無官方網站"
       },
       status: "partial",
-      note: { en: "Company registry (g0v mirror) + whois/DNS checks. Domain registered 2026-04-26, no website.", zh: "商工登記（g0v 鏡像）與 whois/DNS 查核；域名 2026-04-26 註冊、無 A 記錄。" }
+      note: {
+        en: "Company registry (g0v) + whois/DNS. The email domain and the Accupass organizer account were both created 2026-04-26 — ~7 weeks BEFORE the company existed; this is the account's first and only event. The sole director has no other companies or public footprint.",
+        zh: "商工登記（g0v）與 whois/DNS 查核。信箱域名與 Accupass 主辦帳號同日建立（2026-04-26），比公司設立早約 7 週；此為該帳號唯一一場活動。代表人名下無其他公司、查無任何公開足跡。"
+      }
+    },
+    {
+      icon: "confirmation_number",
+      label: { en: "“Invitation/review-based” & “sold out”", zh: "「邀請與審核制」「門票售完」" },
+      value: {
+        en: "The organizer billed the summit as invitation/review-based with physical tickets sold out",
+        zh: "主辦方宣稱峰會採邀請與審核制，且實體票售完"
+      },
+      status: "claimed",
+      note: {
+        en: "The Accupass page was a normal single-tier NT$500 checkout with no review mechanism (970 views · 13 likes). “Sold out” can't be verified: the page was never archived and now just reads “event ended”, not “sold out”.",
+        zh: "Accupass 實為單一票種 NT$500 的一般購票流程，無任何審核機制痕跡（頁面 970 瀏覽、13 喜歡）。「售完」無法驗證：活動頁從未被存檔，現況顯示「活動已結束」而非「售完」。"
+      }
     },
     {
       icon: "school",
@@ -90,7 +106,10 @@ window.SITE_EVENT = {
         zh: "原定 8 位；當天名單 6 位。主辦方行前貼文稱兩位海外講師改以影片分享"
       },
       status: "verified",
-      note: { en: "Day-of speaker list recorded on site; lineup cross-checked with the Accupass page.", zh: "當天名單為現場記錄；原定陣容與 Accupass 活動頁互證。" }
+      note: {
+        en: "Day-of speaker list recorded first-hand on site; lineup cross-checked with the Accupass page. Notably, none of the eight speakers (or their organizations) ever mentioned this summit on their own channels.",
+        zh: "當天名單為本站作者現場第一手記錄；原定陣容與 Accupass 活動頁互證。值得一提：八位講者本人與所屬組織的公開頻道皆未提及這場峰會。"
+      }
     },
     {
       icon: "newspaper",
@@ -194,8 +213,8 @@ window.SITE_SPEAKERS = [
       zh: "Acorn Pacific Ventures（橡子園太平洋基金）合夥人"
     },
     bio: {
-      en: "Partner at Silicon Valley VC firm Acorn Pacific Ventures and, since July 2023, director & CEO (unpaid) of the Taoyuan City Sports Development Foundation. Previously GM of Alibaba Tmall Taiwan (2018), first GM of the revived CPBL Wei Chuan Dragons (2019–2020), and VP of PChome e-commerce & Ruten (from 2020). Former chairman of Cheetah Mobile Taiwan; Carnegie Mellon MISM; author of a book on cross-domain leadership.",
-      zh: "矽谷創投 Acorn Pacific Ventures（橡子園太平洋基金）合夥人，2023 年 7 月起兼任桃園市體育發展基金會董事暨執行長（無給職）。歷任阿里巴巴天貓台灣總經理（2018）、中職味全龍復軍首任領隊（2019–2020）、PChome 電商副總暨露天市集副總（2020 起）；曾任雪豹科技董事長，卡內基美隆大學資訊管理碩士，著有《跨界領導密碼》。"
+      en: "Partner at Silicon Valley VC firm Acorn Pacific Ventures; since July 2023, director & CEO (unpaid) of the Taoyuan City Sports Development Foundation; and since mid-2025, chairman of the Taiwan Future Society (Yangmingshan). Previously GM of Alibaba Tmall Taiwan (2018), first GM of the revived CPBL Wei Chuan Dragons (2019–2020), and VP of PChome e-commerce & Ruten (from 2020). Former chairman of Cheetah Mobile Taiwan; Carnegie Mellon MISM; author of a book on cross-domain leadership.",
+      zh: "矽谷創投 Acorn Pacific Ventures（橡子園太平洋基金）合夥人，2023 年 7 月起兼任桃園市體育發展基金會董事暨執行長（無給職），並自 2025 年年中起任陽明山未來學社理事長。歷任阿里巴巴天貓台灣總經理（2018）、中職味全龍復軍首任領隊（2019–2020）、PChome 電商副總暨露天市集副總（2020 起）；曾任雪豹科技董事長，卡內基美隆大學資訊管理碩士，著有《跨界領導密碼》。"
     },
     facts: [
       {
@@ -210,8 +229,8 @@ window.SITE_SPEAKERS = [
       },
       {
         claim: { en: "Chairman, Yangmingshan Future Society", zh: "陽明山未來學社理事長" },
-        status: "claimed",
-        note: { en: "The society's own website lists Kuang-Shih Yeh as current chairman; the claim appears only on Wu's personal site and event copy.", zh: "學社官網現任理事長為葉匡時；此說法僅見其個人網站與活動文宣，查無獨立報導。" }
+        status: "verified",
+        note: { en: "Confirmed in round two: the society's Chinese homepage states “the current chairman is David Wu”, and its own March 2026 event report calls him “Chairman Wu”. He took over around mid-2025 (Wayback: between 2025-03 and 2025-10); the English/about pages that still list Kuang-Shih Yeh are stale 2020 copy.", zh: "第二輪查證翻案：學社中文版首頁明載「現任理事長由吳德威先生出任」，2026 年 3 月官方活動報導亦稱「理事長吳德威」。約 2025 年年中就任（Wayback 定位於 2025-03 至 2025-10 間換屆）；仍列葉匡時的英文版與「關於我們」頁為 2020 年舊文案未更新。" }
       },
       {
         claim: { en: "Former VP of PChome e-commerce & Ruten", zh: "曾任 PChome 電商副總、露天市集副總" },
@@ -247,8 +266,8 @@ window.SITE_SPEAKERS = [
       zh: "Yo-Kai Express 創辦人暨執行長"
     },
     bio: {
-      en: "Founder & CEO of Yo-Kai Express (founded 2016, Hayward, CA), maker of 24/7 unmanned hot-food robots that serve ramen in ~45 seconds — famously praised by Elon Musk in a 2018 tweet. NTU bio-mechatronics grad, UC Irvine MS, 12 years at ASE Group before founding the company. Machines deployed across the US, Japan, Korea, Taiwan and Europe (independent reports: ~150–200 units/locations by 2024–25). Investors include Ippudo's parent Chikaranomoto, Pulmuone (Series A lead) and Japan Tobacco; SoftBank Robotics is its Japan technology partner.",
-      zh: "Yo-Kai Express（2016 年創立，加州 Hayward）創辦人暨執行長，打造 24 小時無人熱食機器人，約 45 秒出餐拉麵，2018 年曾獲 Elon Musk 推文稱讚。台大生物機電系畢業、UC Irvine 碩士，曾任日月光工程師與業務 12 年。設備部署於美、日、韓、台與歐洲多國（獨立報導 2024–25 年約 150–200 台／據點）。投資人含一風堂母公司力之源、Pulmuone（Series A 領投）與日本菸草；SoftBank Robotics 為日本市場技術合作夥伴。"
+      en: "Founder & CEO of Yo-Kai Express (founded 2016, Hayward, CA), maker of 24/7 unmanned hot-food robots that serve ramen in ~45 seconds — famously praised by Elon Musk in a 2018 tweet. NTU bio-mechatronics grad who moved to the US in 2004 for a UC Irvine MS (2004–2006), then spent 12 years at ASE Group — latterly its Silicon Valley subsidiary — before founding the company. Machines deployed across the US, Japan, Korea, Taiwan and Europe (independent reports: ~150–200 units/locations by 2024–25). Investors include Ippudo's parent Chikaranomoto, Pulmuone (Series A lead) and Japan Tobacco; SoftBank Robotics is its Japan technology partner.",
+      zh: "Yo-Kai Express（2016 年創立，加州 Hayward）創辦人暨執行長，打造 24 小時無人熱食機器人，約 45 秒出餐拉麵，2018 年曾獲 Elon Musk 推文稱讚。台大生物機電系畢業，2004 年赴美就讀 UC Irvine 碩士（2004–2006），其後任職日月光 12 年（後期在矽谷的美國子公司）。設備部署於美、日、韓、台與歐洲多國（獨立報導 2024–25 年約 150–200 台／據點）。投資人含一風堂母公司力之源、Pulmuone（Series A 領投）與日本菸草；SoftBank Robotics 為日本市場技術合作夥伴。"
     },
     facts: [
       {
@@ -263,8 +282,8 @@ window.SITE_SPEAKERS = [
       },
       {
         claim: { en: "Moved to the US in 2004", zh: "2004 年前往美國發展" },
-        status: "claimed",
-        note: { en: "No independent source mentions 2004; the documented timeline is NTU → UC Irvine → 12 years at ASE → first startup 2013 → Yo-Kai 2016.", zh: "遍查中英文報導皆無「2004 年」；可查證時間線為台大 → UC Irvine → 日月光 12 年 → 2013 首次創業 → 2016 創立 Yo-Kai。" }
+        status: "verified",
+        note: { en: "Confirmed in round two: his own LinkedIn lists UC Irvine 2004–2006, cross-consistent with NTU 1997–2001, joining ASE in 2006 (later at ASE (U.S.) Inc. in Silicon Valley) and the widely reported “12 years in semiconductors” (2006–2018). “2004” = moving to the US for grad school.", zh: "第二輪查證翻案：本人 LinkedIn 明列 UC Irvine 就讀 2004–2006，與台大 1997–2001、2006 年入職日月光（後任職矽谷的美國子公司 ASE (U.S.) Inc.）、各報導「半導體 12 年」（2006–2018）完全交叉吻合——「2004 年赴美」即赴 UC Irvine 讀碩士。" }
       },
       {
         claim: { en: "24/7 zero-staff AI food machines", zh: "24 小時零人力 AI 自動餐飲機" },
@@ -301,14 +320,14 @@ window.SITE_SPEAKERS = [
       zh: "Bonhope Capital Venture Partner・連續創業者"
     },
     bio: {
-      en: "LA-based serial entrepreneur (Tina W. Cheng, CFA; UCLA engineering, USC MBA — not the Cherubic Ventures Tina Cheng). Started her first company at 22 (The Muse, a three-story Pasadena nightclub that later expanded to Shanghai); six ventures across the US, Taiwan and Asia including a Taiwan postpartum care center and custom-jewelry brand Capsul. Served as Greater China CEO of JigoCity, the social-commerce platform acquired by Nasdaq-listed FriendFinder Networks in 2011 for up to US$65M in stock and warrants. Now Venture Partner at Bonhope Capital.",
-      zh: "洛杉磯連續創業者（Tina W. Cheng, CFA；UCLA 工程學士、USC MBA——非 Cherubic Ventures 的 Tina Cheng）。22 歲創辦第一間公司（Pasadena 三層樓夜店 The Muse，後拓展至上海）；六個事業橫跨美國、台灣與亞洲，含台灣月子中心與客製珠寶品牌 Capsul。曾任社交電商 JigoCity 大中華區 CEO，該公司 2011 年由 Nasdaq 上市之 FriendFinder Networks 以最高 6,500 萬美元股票與認股權證收購。現任 Bonhope Capital Venture Partner。"
+      en: "LA-based serial entrepreneur (Tina W. Cheng, CFA; UCLA engineering, USC MBA — not the Cherubic Ventures Tina Cheng). Started her first company at 22 (The Muse, a three-story Pasadena nightclub that later expanded to Shanghai); six ventures across the US, Taiwan and Asia including a Taiwan postpartum care center and custom-jewelry brand Capsul. Served as Greater China CEO of JigoCity, the social-commerce platform acquired by Nasdaq-listed FriendFinder Networks in 2011 for up to US$65M in stock and warrants. Earlier finance career includes portfolio management at Bear Stearns and a boutique-IB managing-director role. Now Venture Partner at Bonhope Capital.",
+      zh: "洛杉磯連續創業者（Tina W. Cheng, CFA；UCLA 工程學士、USC MBA——非 Cherubic Ventures 的 Tina Cheng）。22 歲創辦第一間公司（Pasadena 三層樓夜店 The Muse，後拓展至上海）；六個事業橫跨美國、台灣與亞洲，含台灣月子中心與客製珠寶品牌 Capsul。曾任社交電商 JigoCity 大中華區 CEO，該公司 2011 年由 Nasdaq 上市之 FriendFinder Networks 以最高 6,500 萬美元股票與認股權證收購。早年金融資歷含 Bear Stearns 投資組合管理與精品投行董事總經理。現任 Bonhope Capital Venture Partner。"
     },
     facts: [
       {
         claim: { en: "Managing Partner of GVA (Global Venture Accelerator)", zh: "GVA Global Venture Accelerator 執行合夥人" },
         status: "claimed",
-        note: { en: "No independent source found for a “Global Venture Accelerator” tied to her; her LinkedIn lists only Bonhope Capital. (Silicon Valley's gva.vc and GVA Capital rosters don't include her.)", zh: "查無與其相關的「Global Venture Accelerator」獨立來源；本人 LinkedIn 僅列 Bonhope Capital（矽谷 gva.vc 與 GVA Capital 團隊名單皆無此人）。" }
+        note: { en: "Two verification rounds found nothing: three recent bios she herself endorsed (SparkLabs Taiwan 2024 instructor bio, her 2025 podcast intro, Bonhope's team page) all omit GVA, and no institution named “Global Venture Accelerator” could be found anywhere. The title's only known source is the event copy.", zh: "兩輪查證皆無所獲：她本人近兩年背書的三份正式簡介（SparkLabs Taiwan 2024 講師簡介、2025 podcast 官方介紹、Bonhope 官網團隊頁）全部沒有 GVA，且全網查無名為「Global Venture Accelerator」的機構——此頭銜目前唯一出處就是主辦方文案。" }
       },
       {
         claim: { en: "Partner at Bonhope Capital (PE fund)", zh: "Bonhope Capital 私募基金合夥人" },
@@ -328,12 +347,12 @@ window.SITE_SPEAKERS = [
       {
         claim: { en: "Founded a large postpartum care center in Taiwan", zh: "創辦台灣大型月子中心" },
         status: "partial",
-        note: { en: "Mentioned in her own interview; no independent Taiwanese coverage found for scale or name.", zh: "見於本人專訪自述；「大型」規模與名稱查無台灣獨立報導。" }
+        note: { en: "Two consistent self-reported sources (VoyageLA interview; her 2025 podcast episode has a chapter on it) but zero third-party records, and no name or location is ever given — “large” is the event copy's own embellishment.", zh: "兩個一致的本人自述來源（VoyageLA 專訪；2025 podcast 有專章談月子中心），但零第三方紀錄，名稱與地點從未揭露——「大型」二字是主辦方文案自行添加。" }
       },
       {
         claim: { en: "Founded a 6-country e-commerce platform sold for US$65M to a Nasdaq company", zh: "創辦橫跨亞洲六國電商，以 6,500 萬美元售予 Nasdaq 上市公司" },
         status: "partial",
-        note: { en: "JigoCity was acquired by FriendFinder Networks (Nasdaq) in 2011 for UP TO $65M in stock + warrants; the official release names three founders — not her (she was Greater China CEO). FriendFinder went bankrupt in 2013.", zh: "JigoCity 2011 年由 FriendFinder Networks（Nasdaq）以「上限 6,500 萬美元」股票＋認股權證收購；官方新聞稿列名三位創辦人不含她（她任大中華區 CEO）。FriendFinder 2013 年破產。" }
+        note: { en: "JigoCity was acquired by FriendFinder Networks (Nasdaq) in 2011 for UP TO $65M in stock + warrants; the official release names three founders — not her. Her own endorsed bios (incl. SparkLabs Taiwan 2024) consistently say “Greater China CEO” (2010–2013), not founder. FriendFinder went bankrupt in 2013.", zh: "JigoCity 2011 年由 FriendFinder Networks（Nasdaq）以「上限 6,500 萬美元」股票＋認股權證收購；官方新聞稿列名三位創辦人不含她。她本人背書的簡介（含 SparkLabs Taiwan 2024）一致寫「大中華區 CEO」（2010–2013）而非創辦人。FriendFinder 2013 年破產。" }
       }
     ],
     refs: [
@@ -376,17 +395,17 @@ window.SITE_SPEAKERS = [
       {
         claim: { en: "Career at AT&T, Credit Suisse, UBS, Deutsche Bank; Wharton graduate", zh: "歷任 AT&T、瑞信、UBS、德銀；華頓畢業" },
         status: "partial",
-        note: { en: "Consistently self-reported across NTU/Sinica/media bios, but no first-hand records (contemporary press, filings) found; Wharton has no institute by the cited name.", zh: "台大／中研院／媒體簡歷內容一致但皆源自本人提供，查無第一手獨立紀錄；華頓並無「科技管理與生醫管理研究所」之正式所名。" }
+        note: { en: "Round two: FINRA/SEC records only go back 10 years, so the banking stints can be neither confirmed nor refuted. His own bios put the roles at associate/VP level (AT&T = CFO of the Taiwan branch), so any “senior executive” phrasing is inflation; and his claimed role on AOL–Time Warner conflicts with the SEC S-4 (advisors were Salomon Smith Barney and Morgan Stanley). He appeared as a Wharton alum at a 2017 event, but the program name shifts between his bios.", zh: "第二輪：FINRA／SEC 紀錄僅保留十年，投行任職無法證實也無法證偽。依本人自述職級為協理／VP 級（AT&T 為台灣分公司財務長），任何「高層」表述屬灌水；自稱參與 AOL 併時代華納一案與 SEC S-4 文件牴觸（主顧問為 Salomon Smith Barney 與 Morgan Stanley）。2017 年曾以華頓校友身分公開露面，但學程名稱在其各版簡歷間不一致。" }
       },
       {
         claim: { en: "Andra's management team includes Cisco/Broadcom/IBM execs, the Siri inventor, Goldman & Morgan Stanley bankers", zh: "Andra 管理團隊含 Cisco、Broadcom、IBM 高層、Siri 發明人、高盛與大摩高層" },
-        status: "claimed",
-        note: { en: "Andra's official team page shows none of these people; the roster appears only in Taiwanese promo copy.", zh: "Andra 官網團隊頁完全對不上；此名單僅見於台灣宣傳稿。" }
+        status: "partial",
+        note: { en: "Round two traced this list to Lin's own NTU faculty bio (added between the 2022 and 2025 versions — the event copy quotes it verbatim). Two of six hold up in some form: ex-Cisco corp-dev head Charles Carmel was an Andra Managing Partner until ~2024 (though his Cisco title was VP, not “president”), and ex-Goldman MD Kathy Park joined as Partner in 2022. No trace anywhere of the Broadcom/LSI, IBM, Siri-inventor or Lehman/Morgan Stanley figures — across ten years of site snapshots, SEC filings and name-by-name searches.", zh: "第二輪追到源頭：此名單逐字出自林本人的台大官網 bio（2022→2025 版之間新增，主辦方為照抄）。六項中兩項有其人：前 Cisco 企業發展主管 Charles Carmel 曾任 Andra 經營合夥人至約 2024（惟其 Cisco 職銜為 VP 而非「總裁」）、前高盛 MD Kathy Park 2022 年加入任 Partner。Broadcom/LSI、IBM 創新長、Siri 發明人、雷曼／大摩四項——遍查十年官網快照、SEC 文件與逐名交叉搜尋——全數查無。" }
       },
       {
         claim: { en: "Portfolio: Palantir, SpaceX, Anthropic, Stripe, xAI, Automation Anywhere, Scale AI, Neuralink, Databricks", zh: "投資組合：Palantir、SpaceX、Anthropic、Stripe、xAI、Automation Anywhere、Scale AI、Neuralink、Databricks" },
         status: "partial",
-        note: { en: "5 of 9 independently verifiable (Stripe, Anthropic, xAI on Andra's site; SpaceX via PitchBook; Automation Anywhere via official LinkedIn). Palantir is self-reported; no record found for Scale AI, Neuralink or Databricks.", zh: "9 家中 5 家可獨立佐證（Stripe、Anthropic、xAI 見官網；SpaceX 見 PitchBook；Automation Anywhere 見官方 LinkedIn）。Palantir 僅本人口述；Scale AI、Neuralink、Databricks 查無紀錄。" }
+        note: { en: "5 of 9 independently supported (Stripe, Anthropic, xAI on Andra's site; SpaceX via PitchBook; Automation Anywhere via official LinkedIn). Palantir has featured on Andra's own portfolio page since 2022 (self-published, no third-party record). Scale AI, Neuralink and Databricks appear in NEITHER ten years of Andra site snapshots NOR Lin's own 16-company bio list — most likely added by the event copy. Per SEC Form D the fund has raised US$350M from 260 investors.", zh: "9 家中 5 家有佐證（Stripe、Anthropic、xAI 見官網；SpaceX 見 PitchBook；Automation Anywhere 見官方 LinkedIn）。Palantir 自 2022 年起見於 Andra 官網 portfolio 頁（屬自我宣稱，無第三方紀錄）。Scale AI、Neuralink、Databricks 則在十年官網快照與林本人 bio 的 16 家清單中都不存在——最可能是活動文宣自行添加。依 SEC Form D，該基金累計實募 3.5 億美元、260 位投資人。" }
       }
     ],
     refs: [
@@ -535,8 +554,8 @@ window.SITE_LETTER = {
 /* ---------- fact-check methodology + highlights ---------- */
 window.SITE_FACTCHECK = {
   method: {
-    en: "Every claim from the organizer's materials was checked one by one against independent sources — official websites, government/company registries, SEC filings, and press coverage — on 2026-07-20. Each claim carries one of three statuses. Full research notes with all source links are in the repo's /research folder.",
-    zh: "主辦方文案中的每一項聲稱，都在 2026-07-20 逐項與獨立來源比對——官方網站、政府與公司登記、SEC 文件與媒體報導——並標注三種查證狀態之一。完整查核筆記與全部來源連結收錄於 repo 的 /research 資料夾。"
+    en: "Every claim from the organizer's materials was checked one by one against independent sources — official websites, government/company registries, SEC filings and press coverage — in two rounds on 2026-07-20. Round two re-examined every unresolved claim with Internet Archive snapshots, SEC EDGAR, FINRA BrokerCheck and the subjects' own recently endorsed bios; two first-round “organizer claim only” items were overturned in the subjects' favor, others hardened. Each claim carries one of three statuses. Full research notes with all source links are in the repo's /research folder.",
+    zh: "主辦方文案中的每一項聲稱，都在 2026-07-20 分兩輪逐項與獨立來源比對——官方網站、政府與公司登記、SEC 文件與媒體報導。第二輪針對所有未解項目加開 Wayback Machine 歷史快照、SEC EDGAR、FINRA BrokerCheck 與當事人近年親自背書的簡介複查；兩項第一輪標「僅主辦方宣稱」的項目獲得平反，其餘則更加確定。每項聲稱標注三種查證狀態之一，完整查核筆記與全部來源連結收錄於 repo 的 /research 資料夾。"
   },
   legend: [
     { status: "verified", label: { en: "Verified", zh: "已驗證" }, desc: { en: "Confirmed by independent sources.", zh: "有獨立來源可證。" } },
@@ -547,28 +566,28 @@ window.SITE_FACTCHECK = {
     title: { en: "What didn't fully check out", zh: "與獨立來源不符的重點" },
     items: [
       {
-        en: "Tina Cheng's “GVA Managing Partner” title has no independent source, and she is not among JigoCity's officially named founders (she was Greater China CEO; the $65M deal was capped stock + warrants).",
-        zh: "Tina Cheng 的「GVA 執行合夥人」查無獨立來源；JigoCity 官方新聞稿列名創辦人不含她（她任大中華區 CEO；6,500 萬美元為上限股票對價）。"
+        en: "Jonathan Lin's “all-star Andra team” and portfolio list trace verbatim to his own NTU faculty bio (added between 2022 and 2025) — the organizer copied it. Of six team names, two hold up in some form (an ex-Cisco VP whose title got inflated to “president”, and an ex-Goldman MD); four are untraceable anywhere. Scale AI, Neuralink and Databricks appear in neither ten years of Andra site snapshots nor Lin's own bio; his banking roles were associate/VP level, and one deal claim conflicts with the SEC's own filing.",
+        zh: "林家振的「Andra 豪華團隊」與投資組合清單，逐字出自他本人的台大官網 bio（2022→2025 版之間新增），主辦方為照抄。六項團隊頭銜中兩項有其人（前 Cisco VP 被說成「總裁」、前高盛 MD 屬實），四項全網查無；Scale AI、Neuralink、Databricks 連十年 Andra 官網快照與林本人自述都沒有；其投行職級實為協理／VP 級，且一項交易聲稱與 SEC 文件牴觸。"
       },
       {
-        en: "Jonathan Lin's “all-star Andra management team” (Cisco/IBM/Siri/Goldman…) doesn't match Andra's own team page, and only 5 of 9 portfolio names could be independently confirmed.",
-        zh: "林家振簡介中的「Andra 豪華管理團隊」（Cisco／IBM／Siri／高盛等）與 Andra 官網完全對不上；9 家投資組合僅 5 家可獨立佐證。"
+        en: "Tina Cheng's “GVA Managing Partner” title has no independent source — three recent bios she herself endorsed omit it, and no such institution can be found. She is also not among JigoCity's officially named founders (her own bios say Greater China CEO; the $65M deal was capped stock + warrants).",
+        zh: "Tina Cheng 的「GVA 執行合夥人」查無獨立來源——她本人近兩年背書的三份正式簡介都沒有這個頭銜，且全網查無此機構；JigoCity 官方新聞稿列名創辦人也不含她（本人簡介寫大中華區 CEO；6,500 萬美元為上限股票對價）。"
       },
       {
-        en: "Andy Lin's “moved to the US in 2004” and “hundreds of machines” exceed what independent reporting supports; SoftBank Robotics is a partner, not an investor.",
-        zh: "Andy Lin 的「2004 年赴美」與「數百台設備」高於獨立報導可支持的範圍；SoftBank Robotics 為合作夥伴而非投資人。"
-      },
-      {
-        en: "David Wu's “Yangmingshan Future Society chairman” conflicts with the society's own site (chairman: Kuang-Shih Yeh).",
-        zh: "吳德威的「陽明山未來學社理事長」與學社官網不符（現任理事長：葉匡時）。"
+        en: "Andy Lin's “hundreds of machines” exceeds independent reporting (~150–200), and SoftBank Robotics is a partner, not an investor.",
+        zh: "Andy Lin 的「數百台設備」高於獨立報導（約 150–200 台／據點）；SoftBank Robotics 為合作夥伴而非投資人。"
       },
       {
         en: "Several “founder” titles are actually co-founder roles (Ray Chen at B Current, Edgar Chiu at SparkLabs Taiwan), and two academic titles are inflated (adjunct professor / consulting expert, not “visiting professor”).",
         zh: "多個「創辦人」實為共同創辦人（陳一強之於活水、邱彥錡之於 SparkLabs Taiwan）；兩個學術頭銜有放大（實為兼任教授／諮詢專家，非「客座教授」）。"
       },
       {
-        en: "The event itself: the legal organizer was incorporated one month before the event; “SV Asia Venture Hub” has no website; the “14-year-old initiator” story appears only in the organizer's own posts; zero media coverage found.",
-        zh: "活動本身：法定主辦公司於活動前一個月才設立；「SV Asia Venture Hub」無官方網站；「14 歲發起人」僅見主辦方自述貼文；查無任何媒體報導。"
+        en: "The event itself: the email domain and Accupass account were created seven weeks before the organizing company legally existed; “invitation/review-based” was in reality a plain NT$500 ticket flow; “sold out” is unverifiable; the “14-year-old initiator” story appears only in the organizer's own posts; zero media coverage, and none of the eight speakers ever mentioned the summit on their own channels.",
+        zh: "活動本身：信箱域名與 Accupass 帳號比主辦公司合法存在早了七週；「邀請與審核制」實為一般 NT$500 購票流程；「售完」無法驗證；「14 歲發起人」僅見主辦方自述貼文；零媒體報導，且八位講者本人的頻道皆未提及這場峰會。"
+      },
+      {
+        en: "For balance: two first-round “organizer claim only” items were overturned in round two — David Wu really is the Taiwan Future Society's current chairman (the society's English pages were stale 2020 copy), and Andy Lin really did move to the US in 2004 (UC Irvine 2004–2006 per his own timeline). Sometimes the claim is right and the website is old.",
+        zh: "平衡起見：兩項第一輪標「僅主辦方宣稱」的項目在第二輪獲得平反——吳德威確為陽明山未來學社現任理事長（學社英文版頁面是 2020 年舊文案），Andy Lin 也確實於 2004 年赴美（本人年表載 UC Irvine 2004–2006）。有時不是聲稱錯了，是網站太舊。"
       }
     ]
   }

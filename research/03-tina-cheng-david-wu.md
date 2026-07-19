@@ -1,5 +1,7 @@
 # 講者查證：鄭文婷 Tina Cheng／吳德威 David Wu（查證日期：2026-07-20）
 
+> **第二輪更新**（見 [06-second-round-deep-dive.md](06-second-round-deep-dive.md)）：吳德威「陽明山未來學社理事長」**翻案為已驗證**（學社中文版首頁與 2026-03 官方活動報導可證，2025 年中換屆，官網英文版為舊文案）；Tina Cheng「GVA」經三份本人背書簡介複查仍查無，「創辦 JigoCity」與官方新聞稿牴觸應更正為「大中華區 CEO」。
+
 ## 鄭文婷 Tina Cheng（Tina W. Cheng, CFA）
 
 > 注意：非 Cherubic Ventures 的 Tina Cheng（兩人為不同人，已排除混淆）。

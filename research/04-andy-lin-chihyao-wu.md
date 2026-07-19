@@ -1,5 +1,7 @@
 # 講者查證：林志鴻 Andy Lin／吳智堯（查證日期：2026-07-20）
 
+> **第二輪更新**（見 [06-second-round-deep-dive.md](06-second-round-deep-dive.md)）：「2004 年前往美國」**翻案為可證**——本人 LinkedIn 載 UC Irvine 2004–2006，與台大 1997–2001、2006 年入職日月光（後任職美國子公司 ASE (U.S.) Inc.）、「半導體 12 年」完全交叉吻合。
+
 ## 林志鴻 Andy Lin（Yo-Kai Express）
 
 ### 逐項查證

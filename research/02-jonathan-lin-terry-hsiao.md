@@ -1,5 +1,7 @@
 # 講者查證：林家振 Jonathan Lin／蕭一白 Terry Hsiao（查證日期：2026-07-20）
 
+> **第二輪更新**（見 [06-second-round-deep-dive.md](06-second-round-deep-dive.md)）：「豪華管理團隊」與投資組合說法**逐字出自林家振本人的台大官網 bio**（主辦方照抄）；六項團隊頭銜中 2 項有其人（Cisco 者實為 VP、高盛 MD 屬實）、4 項查無；Palantir 自 2022 年起見於 Andra 官網；Scale AI／Neuralink／Databricks 連 Andra 官網與林本人自述都沒有。
+
 ## 林家振 Jonathan Lin
 
 ### 逐項查證

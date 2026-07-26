@@ -129,8 +129,7 @@
       return '<div class="fact" data-item>' +
         '<div class="fact__label"><span class="material-symbols-rounded" aria-hidden="true">' +
           escapeHtml(f.icon || "info") + "</span><span>" + escapeHtml(t(f.label)) + "</span></div>" +
-        '<div><div class="fact__value">' + escapeHtml(t(f.value)) + "</div>" +
-          (f.note ? '<div class="fact__note">' + escapeHtml(t(f.note)) + "</div>" : "") + "</div>" +
+        '<div class="fact__value">' + escapeHtml(t(f.value)) + "</div>" +
       "</div>";
     }).join("");
     return sectionHead("01 · " + ui("navEvent"), ui("secEvent"), ui("secEventSub")) +

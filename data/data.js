@@ -120,8 +120,7 @@ window.SITE_EVENT = {
     { label: { en: "Economic Daily News report", zh: "經濟日報報導" }, url: "https://money.udn.com/money/story/5635/9639200" },
     { label: { en: "Accupass event page", zh: "Accupass 活動頁" }, url: "https://www.accupass.com/event/2607111225301831786626" },
     { label: { en: "Organizer's Facebook group", zh: "主辦方 FB 社團" }, url: "https://www.facebook.com/groups/3905341733045087/" },
-    { label: { en: "Venue: Socrates Hall (GIS)", zh: "場地：蘇格拉底廳（集思）" }, url: "https://www.meeting.com.tw/ntu/socrates.php" },
-    { label: { en: "Company registry (g0v)", zh: "公司登記（g0v）" }, url: "https://company.g0v.ronny.tw/api/search?q=%E7%9F%BD%E8%B0%B7%E4%BA%9E%E6%B4%B2%E9%A0%98%E8%A2%96%E9%A1%A7%E5%95%8F" }
+    { label: { en: "Venue: Socrates Hall (GIS)", zh: "場地：蘇格拉底廳（集思）" }, url: "https://www.meeting.com.tw/ntu/socrates.php" }
   ]
 };
 

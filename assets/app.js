@@ -11,58 +11,52 @@
   var EVENT = window.SITE_EVENT || {};
   var SPEAKERS = Array.isArray(window.SITE_SPEAKERS) ? window.SITE_SPEAKERS : [];
   var NOTES = Array.isArray(window.SITE_NOTES) ? window.SITE_NOTES : [];
+  var EXTRAS = Array.isArray(window.SITE_EXTRAS) ? window.SITE_EXTRAS : [];
   var LETTER = window.SITE_LETTER || {};
-  var FACTCHECK = window.SITE_FACTCHECK || {};
 
   /* ---------- UI chrome strings ---------- */
   var I18N = {
     en: {
       statusChip: "July 19, 2026 · Taipei · event concluded",
       metaDate: "Date", metaTime: "Time", metaVenue: "Venue", metaFormat: "Format",
-      format: "Ticketed — single NT$500 tier via Accupass",
+      format: "Ticketed via Accupass",
       navOverview: "Overview", navEvent: "The event", navSpeakers: "Speakers",
-      navNotes: "My notes", navContext: "Context", navFactcheck: "Fact-check",
-      secEvent: "The event, verified", secEventSub: "What can actually be confirmed about this summit — and what only the organizer says.",
-      secSpeakers: "Speakers", secSpeakersSub: "Backgrounds rebuilt from independent sources. Click any speaker for the claim-by-claim fact-check and references.",
+      navNotes: "My notes", navExtras: "Deep dives", navContext: "Context",
+      secEvent: "The event", secEventSub: "",
+      secSpeakers: "Speakers", secSpeakersSub: "Click any speaker for the full profile and references.",
       secNotes: "My session notes", secNotesSub: "Personal takeaways from each talk on the day.",
-      secContext: "Context", secFactcheck: "Fact-check & sources",
-      secFactcheckSub: "How the verification was done, and where it disagrees with the organizer's copy.",
+      secExtras: "Follow-up deep dives", secExtrasSub: "Topics from the talks I found fascinating enough to turn into full sites of their own.",
+      secContext: "Context",
       groupDay: "Spoke on the day", groupAbsent: "Announced, not on the day list",
       attendYes: "Spoke on the day", attendNo: "Not on day list · video per organizer",
-      viewCheck: "Fact-check", close: "Close",
-      dlgBio: "Verified profile", dlgFacts: "Claim-by-claim", dlgRefs: "References",
+      viewCheck: "Details", close: "Close",
+      dlgBio: "Profile", dlgFacts: "Key points", dlgRefs: "References",
       notePlaceholder: "Notes coming soon — I'll write up this session shortly.",
-      legendTitle: "Status legend",
       eventLinks: "Primary links",
       letterLinks: "Sources",
-      researchLink: "Full research notes (GitHub)",
-      statusLabels: { verified: "Verified", partial: "Partially verified", claimed: "Organizer claim only" }
+      extrasVisit: "Visit site"
     },
     zh: {
       statusChip: "2026 年 7 月 19 日・台北・活動已結束",
       metaDate: "日期", metaTime: "時間", metaVenue: "地點", metaFormat: "形式",
-      format: "收費活動・Accupass 單一票種 NT$500",
+      format: "收費活動・Accupass 售票",
       navOverview: "總覽", navEvent: "活動", navSpeakers: "講者",
-      navNotes: "聽講心得", navContext: "背景脈絡", navFactcheck: "事實查核",
-      secEvent: "活動資訊（已查證）", secEventSub: "這場峰會有哪些事實可以被證實——哪些只有主辦方單方面的說法。",
-      secSpeakers: "講者", secSpeakersSub: "以獨立來源重建的講者背景。點擊任一位可看逐項查核與參考來源。",
+      navNotes: "聽講心得", navExtras: "延伸整理", navContext: "背景脈絡",
+      secEvent: "活動資訊", secEventSub: "",
+      secSpeakers: "講者", secSpeakersSub: "點擊任一位講者可看完整介紹與相關連結。",
       secNotes: "聽講心得", secNotesSub: "當天每場分享的個人筆記與收穫。",
-      secContext: "背景脈絡", secFactcheck: "事實查核與來源",
-      secFactcheckSub: "查證方法，以及與主辦方文案不符之處。",
+      secExtras: "會後延伸整理", secExtrasSub: "峰會上讓我特別感興趣的主題，回家後各自整理成了一個完整的網站。",
+      secContext: "背景脈絡",
       groupDay: "當天出席", groupAbsent: "原定講師・未在當天名單",
       attendYes: "當天出席", attendNo: "未在當天名單・主辦方稱改影片分享",
-      viewCheck: "查核詳情", close: "關閉",
-      dlgBio: "已驗證簡介", dlgFacts: "逐項查核", dlgRefs: "參考來源",
+      viewCheck: "詳細介紹", close: "關閉",
+      dlgBio: "簡介", dlgFacts: "重點整理", dlgRefs: "參考連結",
       notePlaceholder: "心得整理中——這場的筆記稍後補上。",
-      legendTitle: "狀態說明",
       eventLinks: "主要連結",
       letterLinks: "來源",
-      researchLink: "完整查核筆記（GitHub）",
-      statusLabels: { verified: "已驗證", partial: "部分吻合", claimed: "僅主辦方宣稱" }
+      extrasVisit: "前往網站"
     }
   };
-
-  var STATUS_ICONS = { verified: "check_circle", partial: "error", claimed: "help" };
 
   /* ---------- safe localStorage ---------- */
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
@@ -89,13 +83,6 @@
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (m) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m];
     });
-  }
-
-  function badge(status) {
-    var label = (ui("statusLabels") || {})[status] || status;
-    return '<span class="badge badge--' + escapeHtml(status) + '">' +
-      '<span class="material-symbols-rounded" aria-hidden="true">' + (STATUS_ICONS[status] || "info") + "</span>" +
-      escapeHtml(label) + "</span>";
   }
 
   function sectionHead(kicker, title, sub) {
@@ -144,7 +131,6 @@
           escapeHtml(f.icon || "info") + "</span><span>" + escapeHtml(t(f.label)) + "</span></div>" +
         '<div><div class="fact__value">' + escapeHtml(t(f.value)) + "</div>" +
           (f.note ? '<div class="fact__note">' + escapeHtml(t(f.note)) + "</div>" : "") + "</div>" +
-        '<div class="fact__badge">' + badge(f.status) + "</div>" +
       "</div>";
     }).join("");
     return sectionHead("01 · " + ui("navEvent"), ui("secEvent"), ui("secEventSub")) +
@@ -154,23 +140,12 @@
   }
 
   function speakerRow(sp, num) {
-    var badges = sp.facts.map(function (f) { return f.status; });
-    var counts = { verified: 0, partial: 0, claimed: 0 };
-    badges.forEach(function (s) { if (counts[s] != null) counts[s]++; });
-    var badgeHtml = Object.keys(counts).filter(function (k) { return counts[k] > 0; })
-      .map(function (k) {
-        var label = (ui("statusLabels") || {})[k];
-        return '<span class="badge badge--' + k + '">' +
-          '<span class="material-symbols-rounded" aria-hidden="true">' + STATUS_ICONS[k] + "</span>" +
-          counts[k] + " " + escapeHtml(label) + "</span>";
-      }).join("");
     return '<button class="speaker" type="button" data-item data-slug="' + escapeHtml(sp.slug) + '" ' +
       'aria-haspopup="dialog" aria-label="' + escapeHtml(t(sp.name)) + '">' +
       '<span class="speaker__num" aria-hidden="true">' + (num < 10 ? "0" + num : num) + "</span>" +
       "<span>" +
         '<span class="speaker__name serif">' + escapeHtml(t(sp.name)) + "</span>" +
         '<p class="speaker__role">' + escapeHtml(t(sp.role)) + "</p>" +
-        '<span class="speaker__badges">' + badgeHtml + "</span>" +
       "</span>" +
       '<span class="speaker__cta">' + escapeHtml(ui("viewCheck")) +
         '<span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></span>' +
@@ -217,32 +192,29 @@
       '<div class="notes">' + cards + "</div>";
   }
 
+  function renderExtras() {
+    var cards = EXTRAS.map(function (x) {
+      return '<a class="extra-card" data-item href="' + escapeHtml(x.url) + '" target="_blank" rel="noopener">' +
+        '<span class="extra-card__icon material-symbols-rounded" aria-hidden="true">' + escapeHtml(x.icon || "public") + "</span>" +
+        '<span class="extra-card__title serif">' + escapeHtml(t(x.title)) + "</span>" +
+        '<span class="extra-card__desc">' + escapeHtml(t(x.desc)) + "</span>" +
+        '<span class="extra-card__cta">' + escapeHtml(ui("extrasVisit")) +
+          '<span class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></span>' +
+      "</a>";
+    }).join("");
+    return sectionHead("04 · " + ui("navExtras"), ui("secExtras"), ui("secExtrasSub")) +
+      '<div class="extras">' + cards + "</div>";
+  }
+
   function renderLetter() {
     var points = (LETTER.points || []).map(function (p) {
       return "<li>" + escapeHtml(t(p)) + "</li>";
     }).join("");
-    return sectionHead("04 · " + ui("navContext"), t(LETTER.title)) +
+    return sectionHead("05 · " + ui("navContext"), t(LETTER.title)) +
       '<div class="letter" data-item>' +
         '<p class="letter__intro">' + escapeHtml(t(LETTER.intro)) + "</p>" +
         "<ul>" + points + "</ul>" +
       "</div>" + linkRow(LETTER.links);
-  }
-
-  function renderFactcheck() {
-    var legend = (FACTCHECK.legend || []).map(function (l) {
-      return '<div class="legend__item" data-item>' + badge(l.status) +
-        "<p>" + escapeHtml(t(l.desc)) + "</p></div>";
-    }).join("");
-    var items = ((FACTCHECK.highlights || {}).items || []).map(function (it) {
-      return "<li>" + escapeHtml(t(it)) + "</li>";
-    }).join("");
-    var researchUrl = "https://github.com/" + (META.repo || "") + "/tree/main/research";
-    return sectionHead("05 · " + ui("navFactcheck"), ui("secFactcheck"), ui("secFactcheckSub")) +
-      '<div class="prose"><p>' + escapeHtml(t(FACTCHECK.method)) + "</p></div>" +
-      '<div class="legend">' + legend + "</div>" +
-      '<div class="highlights"><h3 class="serif">' + escapeHtml(t((FACTCHECK.highlights || {}).title)) + "</h3>" +
-        "<ol>" + items + "</ol></div>" +
-      linkRow([{ label: { en: ui("researchLink"), zh: ui("researchLink") }, url: researchUrl }]);
   }
 
   /* ---------- nav ---------- */
@@ -251,8 +223,8 @@
     { id: "event", key: "navEvent", icon: "event" },
     { id: "speakers", key: "navSpeakers", icon: "groups" },
     { id: "notes", key: "navNotes", icon: "edit_note" },
-    { id: "context", key: "navContext", icon: "history_edu" },
-    { id: "factcheck", key: "navFactcheck", icon: "fact_check" }
+    { id: "extras", key: "navExtras", icon: "travel_explore" },
+    { id: "context", key: "navContext", icon: "history_edu" }
   ];
 
   function paintNav() {
@@ -280,8 +252,8 @@
       { id: "event", html: renderEvent },
       { id: "speakers", html: renderSpeakers },
       { id: "notes", html: renderNotes },
-      { id: "context", html: renderLetter },
-      { id: "factcheck", html: renderFactcheck }
+      { id: "extras", html: renderExtras },
+      { id: "context", html: renderLetter }
     ];
     sectionsEl.innerHTML = "";
     defs.forEach(function (d) {
@@ -353,7 +325,7 @@
     var sp = findSpeaker(slug);
     if (!sp) return;
     var facts = (sp.facts || []).map(function (f) {
-      return '<div class="factcheck-row">' + badge(f.status) +
+      return '<div class="factcheck-row">' +
         "<div><b>" + escapeHtml(t(f.claim)) + "</b>" +
         (f.note ? "<p>" + escapeHtml(t(f.note)) + "</p>" : "") + "</div></div>";
     }).join("");

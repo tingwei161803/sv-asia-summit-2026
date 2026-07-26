@@ -1,12 +1,10 @@
 /* =========================================================================
    data/data.js — single source of truth for the site (plain globals, no modules)
 
-   Verification statuses used throughout:
-     "verified" — confirmed by independent sources (official sites, filings, press)
-     "partial"  — core claim holds but details differ from independent records
-     "claimed"  — found only in organizer material; no independent source
-
-   Full research notes with sources live in /research/*.md of this repo.
+   `status` fields ("verified"/"partial"/"claimed") are kept for reference but
+   are no longer rendered on the site; SITE_FACTCHECK below is likewise kept
+   as data only (its section is hidden). Full research notes with sources
+   live in /research/*.md of this repo.
    ========================================================================= */
 
 window.SITE_META = {
@@ -15,12 +13,12 @@ window.SITE_META = {
     zh: "矽谷亞洲青年創新領袖峰會 2026"
   },
   subtitle: {
-    en: "Event recap, fact-checked speaker profiles & my session notes",
-    zh: "活動回顧・講者事實查核・聽講心得"
+    en: "Event recap, speaker profiles & my session notes",
+    zh: "活動回顧・講者介紹・聽講心得"
   },
   description: {
-    en: "A recap of the SV–Asia Youth Innovation Leaders Summit (2026-07-19, NTU, Taipei): verified event facts, fact-checked speaker profiles with references, and session notes.",
-    zh: "矽谷亞洲青年創新領袖峰會（2026-07-19，台大）活動回顧：經查證的活動資訊、講者背景事實查核與參考來源，以及聽講心得。"
+    en: "A recap of the SV–Asia Youth Innovation Leaders Summit (2026-07-19, NTU, Taipei): event info, speaker profiles with references, session notes and follow-up deep dives.",
+    zh: "矽谷亞洲青年創新領袖峰會（2026-07-19，台大）活動回顧：活動資訊、講者介紹與參考來源、聽講心得，以及會後延伸整理。"
   },
   url: "https://sv-asia-summit-2026.peteraim.com/",
   repo: "tingwei161803/sv-asia-summit-2026"
@@ -38,10 +36,6 @@ window.SITE_EVENT = {
     {
       en: "An invitation/review-based youth entrepreneurship summit that brought together speakers from Silicon Valley and Asia — venture investors, serial founders and innovation educators — for an afternoon of talks and networking aimed at students and young founders.",
       zh: "一場採邀請與審核制的青年創業峰會，匯聚來自矽谷與亞洲的創投、連續創業者與創新教育推動者，以講座與交流為主，面向學生與年輕創業者。"
-    },
-    {
-      en: "This site is my personal recap: every event and speaker claim below was checked against independent sources (official sites, government filings, press coverage), labeled with a verification status, and linked to references. Organizer marketing copy is never taken at face value.",
-      zh: "這個網站是我的個人整理：以下所有活動與講者資訊都逐項與獨立來源（官網、政府登記、媒體報導）比對，標注查證狀態並附上參考連結，不直接照抄主辦方文案。"
     }
   ],
   facts: [
@@ -84,19 +78,19 @@ window.SITE_EVENT = {
       },
       status: "claimed",
       note: {
-        en: "The Accupass page was a normal single-tier NT$500 checkout with no review mechanism (970 views · 13 likes). “Sold out” can't be verified: the page was never archived and now just reads “event ended”, not “sold out”.",
-        zh: "Accupass 實為單一票種 NT$500 的一般購票流程，無任何審核機制痕跡（頁面 970 瀏覽、13 喜歡）。「售完」無法驗證：活動頁從未被存檔，現況顯示「活動已結束」而非「售完」。"
+        en: "The Accupass page was a normal ticket checkout with no review mechanism (970 views · 13 likes). “Sold out” can't be verified: the page was never archived and now just reads “event ended”, not “sold out”.",
+        zh: "Accupass 為一般購票流程，無審核機制痕跡（頁面 970 瀏覽、13 喜歡）。「售完」無法驗證：活動頁從未被存檔，現況顯示「活動已結束」而非「售完」。"
       }
     },
     {
       icon: "school",
-      label: { en: "“Initiated by a 14-year-old”", zh: "「14 歲高中生發起」" },
+      label: { en: "Initiator", zh: "發起人" },
       value: {
-        en: "The organizer's posts say the summit was initiated by a 14-year-old high schooler (the主辦人's daughter)",
-        zh: "主辦方貼文自述峰會由 14 歲高中生（主辦人的女兒）發起"
+        en: "Initiated by Christine Chen (陳思穎), a 14-year-old student",
+        zh: "由 14 歲學生 Christine Chen（陳思穎）發起籌辦"
       },
-      status: "claimed",
-      note: { en: "Only found in the organizer's own Facebook posts; no third-party coverage. (Age 14 is junior-high age in Taiwan's system.)", zh: "僅見於主辦方自己的 FB 貼文，無第三方報導；14 歲在台灣學制通常為國中年齡。" }
+      status: "verified",
+      note: { en: "Named in the Economic Daily News (UDN) recap, 2026-07-21, and in the organizer's posts.", zh: "經濟日報 2026-07-21 報導與主辦方貼文均載明。" }
     },
     {
       icon: "groups",
@@ -114,12 +108,16 @@ window.SITE_EVENT = {
     {
       icon: "newspaper",
       label: { en: "Media coverage", zh: "媒體報導" },
-      value: { en: "None found — no press or third-party social posts about this summit", zh: "查無任何媒體報導或主辦方以外的第三方貼文" },
+      value: {
+        en: "Economic Daily News (UDN) ran a recap on 2026-07-21: the summit concluded successfully with a full house of students, parents and young founders",
+        zh: "經濟日報 2026-07-21 刊出報導：峰會圓滿落幕，現場座無虛席，吸引學生、家長與青年創業者參與"
+      },
       status: "verified",
-      note: { en: "Multiple search engines and keyword sets, checked 2026-07-20.", zh: "多引擎、多組關鍵字查核（2026-07-20）。" }
+      note: { en: "See the report link below.", zh: "報導連結見下方。" }
     }
   ],
   links: [
+    { label: { en: "Economic Daily News report", zh: "經濟日報報導" }, url: "https://money.udn.com/money/story/5635/9639200" },
     { label: { en: "Accupass event page", zh: "Accupass 活動頁" }, url: "https://www.accupass.com/event/2607111225301831786626" },
     { label: { en: "Organizer's Facebook group", zh: "主辦方 FB 社團" }, url: "https://www.facebook.com/groups/3905341733045087/" },
     { label: { en: "Venue: Socrates Hall (GIS)", zh: "場地：蘇格拉底廳（集思）" }, url: "https://www.meeting.com.tw/ntu/socrates.php" },
@@ -164,7 +162,8 @@ window.SITE_SPEAKERS = [
       { label: "中華創新發明學會官網", url: "https://www.innosociety.org/" },
       { label: "CIIS 理監事會名單", url: "https://www.innosociety.org/m/412-1649-13687.php" },
       { label: "2022 IIP/IIIC 頒獎新聞稿", url: "https://www.innosociety.org/m/404-1649-111543.php" },
-      { label: "台師大 2025 IIIC 公告（第三方）", url: "https://www.acad.ntnu.edu.tw/zh_tw/showepaper/-%E7%99%BC%E6%98%8E%E7%AB%B6%E8%B3%BD-%E4%B8%AD%E8%8F%AF%E5%89%B5%E6%96%B0%E7%99%BC%E6%98%8E%E5%AD%B8%E6%9C%83%E8%BE%A6%E7%90%862025-%E7%AC%AC16%E5%B1%86IIIC%E5%9C%8B%E9%9A%9B%E5%89%B5%E6%96%B0%E7%99%BC%E6%98%8E%E7%AB%B6%E8%B3%BD-%E6%95%AC%E8%AB%8B%E8%B8%B4%E8%BA%8D%E5%A0%B1%E5%90%8D%E5%8F%83%E5%8A%A0-30634096" }
+      { label: "台師大 2025 IIIC 公告（第三方）", url: "https://www.acad.ntnu.edu.tw/zh_tw/showepaper/-%E7%99%BC%E6%98%8E%E7%AB%B6%E8%B3%BD-%E4%B8%AD%E8%8F%AF%E5%89%B5%E6%96%B0%E7%99%BC%E6%98%8E%E5%AD%B8%E6%9C%83%E8%BE%A6%E7%90%862025-%E7%AC%AC16%E5%B1%86IIIC%E5%9C%8B%E9%9A%9B%E5%89%B5%E6%96%B0%E7%99%BC%E6%98%8E%E7%AB%B6%E8%B3%BD-%E6%95%AC%E8%AB%8B%E8%B8%B4%E8%BA%8D%E5%A0%B1%E5%90%8D%E5%8F%83%E5%8A%A0-30634096" },
+      { label: "延伸整理：TRIZ 40 發明原則圖鑑", url: "https://triz-40.peteraim.com/" }
     ]
   },
   {
@@ -201,7 +200,8 @@ window.SITE_SPEAKERS = [
       { label: "Tatler Asia 個人頁", url: "https://www.tatlerasia.com/people/%E9%99%B3%E4%B8%80%E5%BC%B7-ray-chen" },
       { label: "AVPN 簡介", url: "https://avpn.asia/author/ray-chen/" },
       { label: "社企流專訪（名言出處）", url: "https://www.seinsights.asia/article/3289/3268/7799" },
-      { label: "Meet 創業小聚專訪", url: "https://meet.bnext.com.tw/articles/view/47567" }
+      { label: "Meet 創業小聚專訪", url: "https://meet.bnext.com.tw/articles/view/47567" },
+      { label: "延伸整理：影響力投資與 B 型企業圖鑑", url: "https://impact-investing.peteraim.com/" }
     ]
   },
   {
@@ -414,7 +414,8 @@ window.SITE_SPEAKERS = [
       { label: "PitchBook", url: "https://pitchbook.com/profiles/investor/224383-69" },
       { label: "台大管理學院教師頁", url: "https://management.ntu.edu.tw/faculty/teacher/sn/385" },
       { label: "中研院 BioTReC", url: "https://biotrec.sinica.edu.tw/posts/187669" },
-      { label: "Meet 創業小聚專訪", url: "https://meet.bnext.com.tw/articles/view/52840" }
+      { label: "Meet 創業小聚專訪", url: "https://meet.bnext.com.tw/articles/view/52840" },
+      { label: "延伸整理：Andra Capital 筆記", url: "https://andra-capital.peteraim.com/" }
     ]
   },
   {
@@ -516,6 +517,43 @@ window.SITE_NOTES = [
   { speaker: "jonathan-lin", content: null }
 ];
 
+/* ---------- follow-up deep-dive sites (my own, hosted on *.peteraim.com) ---------- */
+window.SITE_EXTRAS = [
+  {
+    slug: "triz-40",
+    url: "https://triz-40.peteraim.com/",
+    icon: "lightbulb",
+    from: "chih-yao-wu",
+    title: { en: "TRIZ 40 Inventive Principles", zh: "TRIZ 萃思 40 項發明原則" },
+    desc: {
+      en: "A bilingual field guide to Altshuller's 40 inventive principles — definitions, sub-principles and 400+ examples from ancient crafts to AI, with flashcards and a quiz. Sparked by Chih-Yao Wu's talk on TRIZ.",
+      zh: "聽完吳智堯執行長介紹 TRIZ 後掉進的坑：把 40 項發明原則整理成雙語圖鑑——每項原則附定義、子原則與從古代工藝到 AI 的 400+ 個案例，還有翻卡與隨堂測驗。"
+    }
+  },
+  {
+    slug: "impact-investing",
+    url: "https://impact-investing.peteraim.com/",
+    icon: "volunteer_activism",
+    from: "ray-chen",
+    title: { en: "Impact Investing & B Corps", zh: "影響力投資與 B 型企業圖鑑" },
+    desc: {
+      en: "A field guide to impact investing and the B Corp movement — concepts, history, Yunus and Grameen Bank, cases by country, key people and Taiwan's ecosystem. Sparked by Ray Chen's talk.",
+      zh: "從陳一強總經理的影響力投資分享延伸的功課：概念與歷史、B 型企業運動、尤努斯與窮人銀行、各國案例、關鍵人物與台灣生態系，全站附來源連結。"
+    }
+  },
+  {
+    slug: "andra-capital",
+    url: "https://andra-capital.peteraim.com/",
+    icon: "account_balance",
+    from: "jonathan-lin",
+    title: { en: "Andra Capital Notes", zh: "Andra Capital 安卓樂資本筆記" },
+    desc: {
+      en: "An independent research site on Andra Capital — company profile, key people, portfolio, SEC filings and the Silicon Valley Coin, every number with a source. Follow-up to Jonathan Lin's talk.",
+      zh: "聽完林家振教授的分享後做的獨立研究站：Andra Capital 公司概況、主要投資人、投資組合、SEC 申報與 Silicon Valley Coin，每個數字都附來源。"
+    }
+  }
+];
+
 /* ---------- context: the Stanford statement quoted by the organizer ---------- */
 window.SITE_LETTER = {
   title: {
@@ -523,8 +561,8 @@ window.SITE_LETTER = {
     zh: "「We Must Act Now」——主辦方宣傳引用的公開聲明"
   },
   intro: {
-    en: "The organizer's promotion leaned heavily on an open letter from the Stanford Digital Economy Lab. The letter is real, and the organizer's description of it is essentially accurate. Verified details:",
-    zh: "主辦方的宣傳文大量引用一封 Stanford Digital Economy Lab 的公開信。查證結果：這封信確實存在，且主辦方的描述基本準確。已驗證細節如下："
+    en: "The organizer's promotion leaned heavily on an open letter from the Stanford Digital Economy Lab. The letter is real, and the organizer's description of it is essentially accurate. Key details:",
+    zh: "主辦方的宣傳文大量引用一封 Stanford Digital Economy Lab 的公開信。這封信確實存在，且主辦方的描述基本準確。重點如下："
   },
   points: [
     {

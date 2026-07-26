@@ -31,7 +31,7 @@
       attendYes: "Spoke on the day", attendNo: "Not on day list · video per organizer",
       viewCheck: "Details", close: "Close",
       dlgBio: "Profile", dlgFacts: "Key points", dlgRefs: "References",
-      notePlaceholder: "Notes coming soon — I'll write up this session shortly.",
+      notePlaceholder: "Notes coming soon ~",
       eventLinks: "Primary links",
       letterLinks: "Sources",
       extrasVisit: "Visit site"
@@ -51,7 +51,7 @@
       attendYes: "當天出席", attendNo: "未在當天名單・主辦方稱改影片分享",
       viewCheck: "詳細介紹", close: "關閉",
       dlgBio: "簡介", dlgFacts: "重點整理", dlgRefs: "參考連結",
-      notePlaceholder: "心得整理中——這場的筆記稍後補上。",
+      notePlaceholder: "心得整理中～",
       eventLinks: "主要連結",
       letterLinks: "來源",
       extrasVisit: "前往網站"
@@ -166,28 +166,31 @@
   }
 
   function renderNotes() {
-    var cards = NOTES.map(function (n) {
-      var sp = SPEAKERS.filter(function (s) { return s.slug === n.speaker; })[0];
-      if (!sp) return "";
-      var body;
-      if (n.content == null) {
-        body = '<p class="note__placeholder">' +
+    var published = NOTES.filter(function (n) { return n.content != null; });
+    var cards;
+    if (!published.length) {
+      cards = '<article class="note" data-item>' +
+        '<p class="note__placeholder">' +
           '<span class="material-symbols-rounded" aria-hidden="true">edit_note</span>' +
-          escapeHtml(ui("notePlaceholder")) + "</p>";
-      } else {
+          escapeHtml(ui("notePlaceholder")) + "</p>" +
+      "</article>";
+    } else {
+      cards = published.map(function (n) {
+        var sp = SPEAKERS.filter(function (s) { return s.slug === n.speaker; })[0];
+        if (!sp) return "";
         var val = n.content[state.lang] || n.content.en || n.content.zh || n.content;
         var paras = Array.isArray(val) ? val : [val];
-        body = '<div class="note__body">' + paras.map(function (p) {
+        var body = '<div class="note__body">' + paras.map(function (p) {
           return "<p>" + escapeHtml(p) + "</p>";
         }).join("") + "</div>";
-      }
-      return '<article class="note" data-item>' +
-        '<div class="note__head">' +
-          '<h3 class="note__title">' + escapeHtml(t(sp.name)) + "</h3>" +
-          '<span class="note__speaker-role">' + escapeHtml(t(sp.role)) + "</span>" +
-        "</div>" + body +
-      "</article>";
-    }).join("");
+        return '<article class="note" data-item>' +
+          '<div class="note__head">' +
+            '<h3 class="note__title">' + escapeHtml(t(sp.name)) + "</h3>" +
+            '<span class="note__speaker-role">' + escapeHtml(t(sp.role)) + "</span>" +
+          "</div>" + body +
+        "</article>";
+      }).join("");
+    }
     return sectionHead("03 · " + ui("navNotes"), ui("secNotes"), ui("secNotesSub")) +
       '<div class="notes">' + cards + "</div>";
   }

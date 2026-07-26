@@ -60,8 +60,8 @@ window.SITE_EVENT = {
       icon: "apartment",
       label: { en: "Organizer", zh: "主辦單位" },
       value: {
-        en: "Legally: SV Asia Leaders Consulting Co., Ltd. (est. 2026-06-15, capital NT$500k, sole director Jo-Ling Chen). “SV Asia Venture Hub” is a Facebook group + email domain, not a registered org with a website",
-        zh: "法定主辦為「矽谷亞洲領袖顧問企業有限公司」（2026-06-15 核准設立，資本額 50 萬，統編 62064078，唯一董事陳若羚）；「SV Asia Venture Hub」僅為 FB 社團名稱與信箱域名，無官方網站"
+        en: "SV Asia Leaders Consulting Co., Ltd.",
+        zh: "矽谷亞洲領袖顧問企業有限公司"
       },
       status: "partial",
       note: {

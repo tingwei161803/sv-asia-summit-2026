@@ -164,6 +164,16 @@
     return html;
   }
 
+  /* note paragraphs are escaped plain text; the one exception is a mention of
+     the extras section title, which becomes an in-page link to #extras */
+  function linkifyExtrasMention(html) {
+    var label = ui("secExtras");
+    var re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+    return html.replace(re, function (m) {
+      return '<a href="#extras">' + m + "</a>";
+    });
+  }
+
   function renderNotes() {
     var published = NOTES.filter(function (n) { return n.content != null; });
     var cards;
@@ -180,7 +190,7 @@
         var val = n.content[state.lang] || n.content.en || n.content.zh || n.content;
         var paras = Array.isArray(val) ? val : [val];
         var body = '<div class="note__body">' + paras.map(function (p) {
-          return "<p>" + escapeHtml(p) + "</p>";
+          return "<p>" + linkifyExtrasMention(escapeHtml(p)) + "</p>";
         }).join("") + "</div>";
         return '<article class="note" data-item>' +
           '<div class="note__head">' +

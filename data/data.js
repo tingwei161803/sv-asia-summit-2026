@@ -508,12 +508,116 @@ window.SITE_SPEAKERS = [
    replace null with { en: "...", zh: "..." } (or arrays of paragraphs
    { en: [...], zh: [...] }) to publish a note.                          */
 window.SITE_NOTES = [
-  { speaker: "chih-yao-wu", content: null },
-  { speaker: "ray-chen", content: null },
-  { speaker: "david-wu", content: null },
-  { speaker: "andy-lin", content: null },
-  { speaker: "tina-cheng", content: null },
-  { speaker: "jonathan-lin", content: null }
+  {
+    speaker: "chih-yao-wu",
+    content: {
+      en: [
+        "First on stage was Chih-Yao Wu, who opened with a \"top 10 of the 100 greatest inventions\" poll: the light bulb, the internet, the telephone, paper, the wheel, the airplane. World-changing inventions sound out of reach, but his whole point was the opposite: inventing is a skill you can learn.",
+        "The method is TRIZ, a system that distills a massive body of patents into 40 inventive principles. He showed the full table of 40, then a \"bag of tricks\" slide revealing how they hide in everyday objects. The tear notch on a snack bag is Preliminary Action, the upside-down ketchup bottle is Inversion, spiral mosquito coils and curved mascara brushes are Spheroidality, car turn signals are Periodic Action, and folding chairs are Dynamics. The little designs around us all follow principles.",
+        "One genuinely practical patent tip: when you find a patent in your way, don't detour yet. Check whether it has expired or lapsed because the annuities went unpaid; many \"blocked\" paths are already public domain. His society also runs a podcast sharing invention success and failure stories, and organizes stages like the Taiwan Innotech Expo and the IIIC international invention competition.",
+        "He closed with two book recommendations: \"Fifty Questions on Creative Thinking for Children\" and \"The Inventor's Handbook\". As for me, I fell straight down the TRIZ rabbit hole and turned the 40 principles into a bilingual field-guide site; see \"follow-up deep dives\" below."
+      ],
+      zh: [
+        "第一位登台的吳智堯執行長，從「百大發明票選前十名」開場：燈泡、網路、電話、紙、車輪、飛機。這些改變世界的東西聽起來遙不可及，但他整場想說的正好相反，發明是有方法可以學的。",
+        "方法就是 TRIZ（萃思），一套把大量專利歸納成 40 個發明原則的系統性創新工具。他先放出 40 個原則的全表，再用「發明家的錦囊妙計」示範其中幾項如何藏在日常用品裡：快撕袋的易撕缺口是「預先作用」、倒立的番茄醬瓶是「逆轉」、盤成螺旋的蚊香與弧形睫毛膏刷頭是「曲面化」、汽車方向燈是「週期性作用」、折疊椅是「動態性」。原來身邊這些不起眼的小設計，背後都有原則可循。",
+        "還有一個很實用的專利小知識：查到一件專利，先別急著繞路，要再確認它是否已經期滿，或因為沒繳年費而消滅；很多「看起來卡住的路」其實已經是公共財。他所在的中華創新發明學會也用 Podcast 分享發明的成功與失敗案例，並長期推動台灣創新技術博覽會、IIIC 國際創新發明競賽這些讓發明者被看見的舞台。",
+        "他最後推薦了兩本書：《兒童創意思考五十問》與《發明家手冊》。而我自己聽完就掉進了 TRIZ 的坑，把 40 個發明原則整理成一個雙語圖鑑網站，放在下方的「會後延伸整理」。"
+      ]
+    }
+  },
+  {
+    speaker: "ray-chen",
+    content: {
+      en: [
+        "Ray Chen strung his talk together as a series of questions, walking the audience through the turning points of his own life. The first one landed hard: can a mid-life crisis still open a second curve? On the slide were two photos from 2006: his young family, and Muhammad Yunus receiving the Nobel Peace Prize with Grameen Bank. That was the year microfinance showed him that business could answer social problems directly, and the start of his own second curve.",
+        "Question two: beyond profit, what else can business change? He traced the B Corp movement's arrival in Asia, from the book he co-translated (\"B Corp: the good companies we need now\") to the group photo of an Asia B Corp gathering, turning \"good company\" from a compliment into a movement with standards and a community.",
+        "B Current Impact Investment positions itself as \"a lever for sustainability, a bridge for cross-sector collaboration\": pooling capital from the National Development Fund, corporates and family offices on one side, and connecting startups, transforming incumbents and cross-border teams on the other, with investment as the fulcrum.",
+        "The most memorable slide for me was the Spectrum of Capital: from finance-only to impact-only is a continuum, not a binary. He summed it up as ABC: A, do no harm (screen out tobacco, gambling, weapons); B, be transparent and fair (do ESG well); C, offer solutions (address the SDGs head-on). Impact investing isn't charity; it's consciously choosing where your capital stands.",
+        "He closed on young people and AI. By the research he cited, the global impact investing market is set to roughly triple within a decade toward the trillion-dollar mark; younger investors care whether investments match their values, not just returns; and AI can amplify impact measurement and capital allocation, as long as its own energy footprint is part of the math. After this talk I turned my homework on impact investing and B Corps into a follow-up site; see \"follow-up deep dives\" below."
+      ],
+      zh: [
+        "陳一強總經理用一連串提問串起整場分享，比較像帶著大家重走一遍他人生的抉擇題。第一題就很重：「中年危機，還能開啟人生第二曲線？」投影片上是 2006 年的兩張照片，一張是他的全家福，另一張是尤努斯（Muhammad Yunus）與鄉村銀行獲頒諾貝爾和平獎。那一年，微型金融讓他看見商業可以直接回應社會問題，也成了他人生第二曲線的起點。",
+        "第二題：「除了追求利潤，商業還能改變什麼？」他從參與翻譯的《B 型企業，現在最需要的好公司》講到 B 型企業運動在亞洲的推展，一路講到 B 型企業亞洲年會的那張大合照，把「好公司」從一句稱讚變成一場有標準、有社群的運動。",
+        "活水影響力投資的自我定位是「永續發展的槓桿、跨域合作的橋樑」：一端匯聚國發基金、企業與家族辦公室的資金，另一端連結想解決問題的新創、轉型中的老創與跨境團隊，用投資當支點把兩端撬在一起。",
+        "我覺得最有畫面的一頁是「資本的光譜」（Spectrum of Capital）：從「財務唯一」到「影響力唯一」是一整段連續的光譜，而不是二選一。他用 ABC 三層總結：A 不作惡（排除菸酒賭博軍火）、B 透明友善（把 ESG 做好）、C 提出解方（直接回應 SDGs 的挑戰）。影響力投資不是慈善，而是有意識地選擇資本要站的位置。",
+        "收尾他把主題拉回年輕世代與 AI。依他引用的市場研究，全球影響力投資規模將在十年內成長近三倍、邁向上兆美元；年輕世代不只追求報酬，更在意投資是否符合價值觀；AI 能放大影響力的衡量與資本配置，但它的能源消耗也要一併納入評估。聽完這場，我把影響力投資與 B 型企業的功課整理成一個延伸站，放在下方的「會後延伸整理」。"
+      ]
+    }
+  },
+  {
+    speaker: "david-wu",
+    content: {
+      en: [
+        "David Wu laid out his cross-industry career on a single \"Investment Journey\" slide: consumer electronics, e-commerce, F&B, mobile apps, live streaming, fintech, and finally venture capital, with the logos of companies he has invested in or mentored filling the screen. His career is that timeline, stepping into a new industry every few years.",
+        "The case he spent the most time on was TaxiGo (later Line Taxi / LineGo). Taxis are a licensed, concession-based industry: medallions are often run by families across three generations, so the real barrier is structural, not technical. On top of that, Taiwan Taxi (55688) had acquired most of the small fleets, leaving newcomers to face a highly consolidated market.",
+        "So how do you test product-market fit there? The playbook at the time was free-ride subsidies to spike demand. It worked, but it burned an enormous amount of cash. Subsidies buy you usage data; they don't buy a lasting moat. It was the most honest, felt piece of startup reality in the whole afternoon.",
+        "His closing slide was a country-by-country table of representative unicorns: OpenAI and SpaceX for the US, ByteDance for China, Coupang for Korea, Mercari for Japan, Grab for Singapore, Canva for Australia… and a blank cell next to Taiwan's flag. Why no Taiwanese unicorn yet? His answer wasn't capital or technology but education: raising people who dare to think big, take risks and pull resources together matters more than subsidizing any single industry."
+      ],
+      zh: [
+        "吳德威合夥人用一頁「Investment Journey」把自己的跨界攤開：從消費電子、電商、餐飲、行動應用、直播、金融科技一路走到創投，投資與輔導過的公司 logo 排滿整張投影片。他的職涯本身就是那條時間軸，每隔幾年就跨進一個新產業。",
+        "他花最多時間講的是 TaxiGo（後來的 Line Taxi、LineGo）這個案例。計程車是特許行業，牌照往往是家族三代經營，真正的門檻不在技術而在結構；加上台灣大車隊（55688）幾乎把小車隊都收購了，新進者面對的是一個高度整合的市場。",
+        "那要怎麼驗證 product-market fit？當年的做法是用免費搭車補貼衝需求，確實有效，但代價是燒非常多錢。補貼買得到使用數據，買不到長期的護城河；這段講得很誠實，也是整場我最有感的創業現實。",
+        "最後一頁是各國代表性獨角獸對照表：美國 OpenAI 與 SpaceX、中國 ByteDance、韓國 Coupang、日本 Mercari、新加坡 Grab、澳洲 Canva……名單一路排下來，台灣的欄位卻是空的。為什麼台灣還沒有自己的獨角獸？他給的答案不在資金也不在技術，而在教育：能不能培養出敢想、敢闖、敢整合資源的人，比補貼任何一個產業都更根本。"
+      ]
+    }
+  },
+  {
+    speaker: "andy-lin",
+    content: {
+      en: [
+        "Andy Lin opened with a single line: \"Have you ever had that experience, where one day, everything you've built goes to zero?\" The room went quiet. He spent the rest of his time answering it with his own story.",
+        "His path was not a fast one: NTU class of 2001, to the US for UC Irvine in 2004, ASE in 2006, then two decades in Silicon Valley before founding Yo-Kai Express. The slide showed where it stands today: seven countries, 300-plus AI-powered autonomous food stations, with SoftBank, IPPUDO and Pulmuone as strategic investors.",
+        "But the spine of the talk wasn't the wins. It was a timeline titled \"failure is the mother of success\": in 2013 his first startup, a grocery-delivery platform for Chinese communities in the US, failed; in 2018 he hit the wall of Japan's supply chain, where no one wanted to help a foreigner; in 2020 COVID wiped revenue to zero in a month; in 2021 Korea's suppliers shut their doors, and he kept ringing doorbells only to be turned away; in 2024 the boba texture wasn't right, so he recalled every bubble-tea machine and re-engineered it through generation after generation.",
+        "After every failure came one of his lines. After shutting down the delivery platform in 2013, wondering if he was simply \"one of those people not built for startups\", what pulled him back was \"the thing you can't stop thinking about is the thing you truly want to do\". The boba do-over slide carried \"you can fail, but you cannot compromise with yourself\". And running through the whole talk: \"you may fail, but you must not stop trying\".",
+        "From absolute zero to seven countries, the talk really said just one thing: you will fail; don't be discouraged. He has lived that sentence into proof."
+      ],
+      zh: [
+        "林志鴻的開場只有一句話：「你有沒有過那種經驗，某一天，你做的事情，完全歸零了？」全場安靜了一下。接下來的時間，他用自己的故事回答這個問題。",
+        "他的路走得不快：2001 年台大畢業、2004 年赴美讀 UC Irvine、2006 年進日月光，在矽谷深耕二十多年後才創辦 Yo-Kai Express。投影片上的現況是七個國家、三百多台 AI 自動化餐飲設備，SoftBank、一風堂、Pulmuone 都是策略投資人。",
+        "但整場的主軸不是這些成績，而是一條「失敗為成功之母」的時間軸：2013 年第一次創業做美國華人超市外送平台，失敗；2018 年撞上日本供應鏈的牆，沒有人有意願幫一個外國人；2020 年 COVID 讓業績一夜歸零，單月收入 0 元；2021 年在韓國吃了供應鏈的閉門羹，持續按電鈴卻被趕走；2024 年因為常溫珍珠口感不對，把珍珠奶茶機全部收回、重新研發改良了好幾代。",
+        "每一段失敗後面，都跟著一句他的話。2013 年收掉外送平台、一度懷疑「也許我就是那個不適合創業的人」之後，把他帶回來的是那句「念念不忘的事，才是你真正想做的事」；珍珠打掉重練的那一頁寫著「可以失敗，但不能對自己妥協」；貫穿整場的則是「你可以失敗，但不能停止嘗試」。",
+        "從完全歸零到七個國家，這場演講其實只講了一件事：會失敗，但不要氣餒。他把這句話活成了證明。"
+      ]
+    }
+  },
+  {
+    speaker: "tina-cheng",
+    content: {
+      en: [
+        "Tina Cheng's talk was literally titled \"Your life is not a straight line\", and her résumé is the proof: a UCLA civil engineering degree, then finance (JP Morgan, investment banking), a nightlife venture along the way, then six startups, including Jigocity, an e-commerce platform sold to a listed company for US$65 million. Her major never decided her destination.",
+        "Her first framework was three circles: Passion × Expertise × Market Demand, with your \"holy grail\" at the intersection. The line that mattered most was the caveat: \"You don't find it first and then start; you discover it through action.\"",
+        "Framework two: stackable, transferable skills. Stackable means each skill amplifies the next; financial analysis plus user insight plus digital marketing compound into something hard to replace. Transferable means negotiation, storytelling and data literacy travel across industries and roles. Her own formula, \"engineering logic × financial thinking × consumer brands × e-commerce marketing\", is what she called the foundation of six startups.",
+        "Careers, in her telling, are step functions, not lines. Banking trained her financial mind, engineering gave her systematic problem-solving, and every failed venture was a data point; each step stacks chips for the next, and none is wasted. She normalized failure in one breath: \"If it works, keep going; if it doesn't, analyze why, then move forward.\"",
+        "The AI section had the line that stuck with me most: \"AI is the co-pilot, not the pilot: the steering wheel stays in your hands.\" AI can generate a business plan in 30 seconds, but judging, verifying and setting direction remain your job. Her six most durable skills for the AI era: critical thinking, innovation, taste, cross-domain integration, communication and persuasion, and networking. Then the \"unfair advantage\": ask yourself why me, and why now. Your background, languages, culture, network and lived experience form a moat AI can never copy.",
+        "Her closing advice was unexpectedly practical: \"Asking for help is the most underrated superpower.\" It's strategy, not weakness: be specific about what you need, do your homework first, give back what you learn, and follow up. And the young have a natural edge, because people genuinely want to help promising young people. The only thing you can lose is the chance you never asked for."
+      ],
+      zh: [
+        "Tina Cheng 的題目就叫「你的人生，不是一條直線」，而她的履歷是這句話最好的證明：UCLA 土木工程畢業，先進金融業（從 JP Morgan 到投資銀行），中間開過夜店，接著連續創業六次，其中電商平台 Jigocity 以 6,500 萬美元出售給上市公司。主修，從來沒有決定她的終點。",
+        "她給的第一個框架是三個圓圈：Passion（你熱愛的）×Expertise（你擅長的）×Market Demand（市場需要的），交集就是你的聖杯。重點是那句補充：「不是找到它才開始，而是在行動中逐漸發現它。」",
+        "第二個框架是「可堆疊的可轉移技能」。可堆疊，指每個技能會強化下一個，像財務分析＋用戶洞察＋數位行銷這種彼此加乘的組合；可轉移，指談判、說故事、數據解讀這些跨產業帶著走的能力。她自己的公式是「工程邏輯 × 金融思維 × 消費者品牌 × 電商行銷」，她說這是六次創業的底氣。",
+        "職涯觀是 Linear vs Step-Function：路徑不是直線，是階梯式跳躍。投行訓練了財務思維、工程背景給了系統化解題、每一次創業失敗都是一個資料點；每一步都在為下一步累積籌碼，沒有一步是浪費的。她把失敗講得很日常：「對了繼續，錯了分析原因，然後前進。」",
+        "AI 時代的段落我印象最深的是那句「AI 是副駕駛，不是駕駛：方向盤永遠在你手上」。AI 可以在 30 秒生成一份商業計畫書，但判斷、驗證、給方向的必須是你。她列的六項最保值能力是批判性思考、創新、品味、跨域整合、溝通說服、建立人脈。接著是「不公平優勢」，問自己「為什麼是我？為什麼是現在？」你的背景、語言、文化、人脈與親身經歷，是 AI 永遠無法複製的護城河。",
+        "最後的建議意外地實用：「開口求助，是最被低估的超能力。」求助不是軟弱，是策略：要具體說明你需要什麼、先做功課再提問、把學習成果回饋給幫你的人、持續跟進。年輕人有個天然優勢，人們天生願意幫助有潛力的年輕人；你唯一會失去的，是沒有開口的那個機會。"
+      ]
+    }
+  },
+  {
+    speaker: "jonathan-lin",
+    content: {
+      en: [
+        "Closing the summit was Jonathan Lin, whose twenty years span operating companies, investment banking and private equity: CFO of AT&T Taiwan, chairman and CEO of a major beverage company, head roles at a global drink chain, investment banking at Deutsche Bank, UBS and Credit Suisse, then partner at Summitview Capital, Dawei Capital and Andra Capital. At Wharton he studied technology and biotech management, where, as he put it, his professors and classmates were mostly healthcare experts and CEOs; in a room like that, the network is part of the curriculum.",
+        "The clearest thread of the talk was his taste in deals: he likes backing companies that change an industry and unseat its leader, and working on era-defining M&A. The case list on his slides spanned three decades, from AOL and Time Warner, Comcast's acquisition of AT&T's cable business, and the Hong Kong IPOs of ICBC and Alibaba, up to the Musk ecosystem's Twitter take-private and the merger of X into xAI, plus a full page of Taiwan deals: Fairchild and System General, MediaTek and NuCORE, the E Ink acquisition that made Amazon's Kindle possible, and Taiwan High Speed Rail's pioneering offshore convertible bond. Behind every deal, a reshuffling of an industry's competitive structure.",
+        "He went deep on one current case: NVIDIA's roughly US$20 billion acquisition of Groq in December 2025. The deal used an unusual \"asset purchase plus non-exclusive license\" structure to lower antitrust risk; in substance it was an acqui-hire, buying the IP outright and folding the core engineering team in; strategically, Groq's LPU patches the GPU's weakness in real-time, low-latency inference. One transaction, played simultaneously on the technology, legal and talent boards: era-defining M&A, happening in real time.",
+        "As for what he does now: Andra Capital focuses on the world's top pre-IPO software and AI companies, and he mentioned Google as an investment partner. My biggest takeaway from the closing talk: at the top of the investing world, judgment and networks are themselves a form of capital. After the summit I did a round of independent homework on Andra Capital and turned it into a site of its own; see \"follow-up deep dives\" below."
+      ],
+      zh: [
+        "壓軸的林家振合夥人，二十年橫跨企業經營、投資銀行與私募基金：當過 AT&T 台灣財務長、波蜜董事長兼總經理、連鎖飲品公司總經理，歷練過德意志銀行、瑞銀與瑞士信貸的投行部門，再到武岳峰資本、達為資本與 Andra Capital 的合夥人。他在 Wharton 讀科技管理與生醫管理，說當時的老師與同學多是醫療領域的專家和 CEO；在那樣的環境裡，人脈網絡本身就是課程的一部分。",
+        "整場最清楚的一條主軸，是他對投資的品味：喜歡投「會改變產業、換掉龍頭」的企業，做「改變時代的併購案」。投影片上列的案例橫跨三十年，從 AOL 併時代華納、Comcast 併 AT&T 有線電視、工商銀行與阿里巴巴的香港上市，一路到馬斯克生態系的 Twitter 私有化與 X、xAI 的整併；台灣線也有一整頁：Fairchild 併崇貿、聯發科併 Nucore、元太併 E Ink 促成了亞馬遜 Kindle、台灣高鐵首開先例的海外可轉債。每一筆交易背後，都是產業競爭結構的重新洗牌。",
+        "他挑了一個最新的個案講深：2025 年 12 月 NVIDIA 以約 200 億美元收購 Groq。交易採「資產收購＋非獨家授權」的特殊架構以降低反壟斷審查風險；本質上是一場 acqui-hire，買斷 IP、把核心工程團隊納入麾下；戰略上則用 Groq 的 LPU 補上 GPU 在即時推論與低延遲應用的短板。一樁交易，同時是技術、法務與人才的棋局，大概就是「改變時代的併購案」正在進行式的樣子。",
+        "回到他現在做的事：Andra Capital 專注投資全球軟體科技與 AI 領域最頂尖的未上市企業，他也提到 Google 是投資夥伴之一。聽完整場，我最深的感想是：在頂級投資的世界裡，判斷力與人脈網絡，本身就是資本。會後我也對 Andra Capital 做了一輪獨立的研究功課，整理成一個網站，放在下方的「會後延伸整理」。"
+      ]
+    }
+  }
 ];
 
 /* ---------- follow-up deep-dive sites (my own, hosted on *.peteraim.com) ---------- */

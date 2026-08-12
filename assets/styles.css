@@ -291,6 +291,8 @@ h1, h2, h3, .serif { font-family: var(--font-display); font-weight: 500; letter-
 .note__placeholder .material-symbols-rounded { font-size: 18px; color: var(--secondary); }
 .note__body p { margin: 0 0 12px; font-size: 15.5px; }
 .note__body p:last-child { margin-bottom: 0; }
+.note__body a { color: var(--on-surface); text-decoration: none; border-bottom: 1px solid var(--outline-variant); }
+.note__body a:hover { border-color: var(--secondary); color: var(--secondary); }
 
 /* ---------- follow-up deep-dive cards ---------- */
 .extras { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }

@@ -1,8 +1,9 @@
 /* =========================================================================
    app.js — renders the whole page from window.SITE_* globals (see data/data.js)
 
-   One render() repaints every section, the sticky nav, chrome and <title>
-   in the active language, so the zh/en toggle never leaves stale text.
+   One render() paints every section, the sticky nav, chrome and <title> in the
+   page's language, which comes from <html lang> — English at the root, Chinese
+   under /zh-Hant/. Switching language is a navigation, not a repaint.
    ========================================================================= */
 (function () {
   "use strict";
@@ -62,8 +63,27 @@
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } }
 
+  /* ---------- language: decided by the URL, never by localStorage ----------
+     English lives at the root, Chinese under /zh-Hant/. Each page declares its
+     own language in <html lang>, so the same visit always shows the language
+     that URL promises — to visitors and to crawlers alike. */
+  var TWIN_DIR = "/zh-Hant";
+  var LANG_CODE = { en: "en", zh: "zh-Hant" };
+
+  function docLang() {
+    var declared = (document.documentElement.getAttribute("lang") || "en").toLowerCase();
+    return declared.indexOf("zh") === 0 ? "zh" : "en";
+  }
+  function otherLangHref() {
+    var p = location.pathname;
+    if (p === TWIN_DIR || p.indexOf(TWIN_DIR + "/") === 0) {
+      return p.slice(TWIN_DIR.length) || "/";
+    }
+    return TWIN_DIR + p;
+  }
+
   var state = {
-    lang: lsGet("lang") || "en",
+    lang: docLang(),
     theme: lsGet("theme") || "light"
   };
 
@@ -285,7 +305,7 @@
   }
 
   function paintChrome() {
-    document.documentElement.setAttribute("lang", state.lang);
+    document.documentElement.setAttribute("lang", LANG_CODE[state.lang]);
     document.title = t(META.title) + " · " + t(META.subtitle);
     var brand = $("brandName");
     if (brand) brand.textContent = t(META.title);
@@ -391,10 +411,16 @@
     if (icon) icon.textContent = state.theme === "dark" ? "light_mode" : "dark_mode";
     lsSet("theme", state.theme);
   }
+  /* the toggle is an <a>: it points at this same page in the other language,
+     and its label names where it goes (not where you are) */
   function applyLangChrome() {
+    var toggle = $("langToggle");
+    if (toggle) toggle.setAttribute("href", otherLangHref());
     var label = $("langLabel");
-    if (label) label.textContent = state.lang === "en" ? "EN" : "中";
-    lsSet("lang", state.lang);
+    if (label) {
+      label.textContent = state.lang === "en" ? "中" : "EN";
+      label.setAttribute("lang", state.lang === "en" ? LANG_CODE.zh : LANG_CODE.en);
+    }
   }
 
   /* ---------- wiring ---------- */
@@ -402,13 +428,6 @@
     $("themeToggle").addEventListener("click", function () {
       state.theme = state.theme === "dark" ? "light" : "dark";
       applyTheme();
-    });
-    $("langToggle").addEventListener("click", function () {
-      state.lang = state.lang === "en" ? "zh" : "en";
-      applyLangChrome();
-      var openSlug = isSlugHash() ? location.hash.slice(1) : null;
-      render();
-      if (dialog.open && openSlug) openDialog(openSlug);
     });
     $("dialogClose").addEventListener("click", closeDialog);
     dialog.addEventListener("click", function (e) { if (e.target === dialog) closeDialog(); });
